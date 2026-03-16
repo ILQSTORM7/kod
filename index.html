@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ilqar Israfilli Profil</title>
+
+<!-- Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+
+body{
+    background: linear-gradient(135deg,#000428,#004e92);
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+/* Glow effekt */
+.card{
+    border-radius:20px;
+    animation: hereket 1.2s ease;
+    box-shadow: 0 0 20px #00bfff,
+                0 0 40px #00bfff,
+                0 0 60px #00bfff;
+    transition: 0.4s;
+}
+
+.card:hover{
+    box-shadow: 0 0 30px #00ffff,
+                0 0 60px #00ffff,
+                0 0 90px #00ffff;
+}
+
+/* Animasiya */
+@keyframes hereket{
+    from{
+        opacity:0;
+        transform:scale(0.7);
+    }
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
+.profil-img{
+    width:120px;
+    height:120px;
+    border-radius:50%;
+    object-fit:cover;
+    border:4px solid #0d6efd;
+}
+
+.bayraq{
+    width:60px;
+    margin-top:10px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <div class="card bg-light p-4 text-center">
+
+        <!-- Profil şəkil -->
+        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" class="profil-img mx-auto mb-3">
+
+        <!-- Ad Soyad -->
+        <h3 class="text-primary">Ilqar Israfilli</h3>
+
+        <!-- Azərbaycan bayrağı -->
+        <img src="https://upload.wikimedia.org/wikipedia/commons/d/dd/Flag_of_Azerbaijan.svg" class="bayraq">
+
+        <hr>
+
+        <!-- Nəticə -->
+        <div id="netice" class="fs-5"></div>
+
+        <hr>
+
+        <!-- Form -->
+        <form id="form">
+            <input type="text" class="form-control mb-2" id="ad">
+            <input type="text" class="form-control mb-2" id="soyad">
+            <input type="number" class="form-control mb-2" id="yas">
+            <input type="number" class="form-control mb-2" id="il">
+            <input type="text" class="form-control mb-2" id="hobbi">
+            <input type="text" class="form-control mb-2" id="yer">
+            <button class="btn btn-primary w-100">Məlumatı Göstər</button>
+        </form>
+
+    </div>
+</div>
+
+<script>
+
+// Avtomatik məlumatlar
+document.getElementById("ad").value = "Ilqar";
+document.getElementById("soyad").value = "Israfilli";
+document.getElementById("yas").value = "12";
+document.getElementById("il").value = "2013";
+document.getElementById("hobbi").value = "Futbol oynamaq";
+document.getElementById("yer").value = "Azərbaycan, Bakı";
+
+document.getElementById("form").addEventListener("submit", function(e){
+    e.preventDefault();
+
+    let ad = document.getElementById("ad").value;
+    let soyad = document.getElementById("soyad").value;
+    let yas = document.getElementById("yas").value;
+    let il = document.getElementById("il").value;
+    let hobbi = document.getElementById("hobbi").value;
+    let yer = document.getElementById("yer").value;
+
+    let netice = `
+        <p><b>Ad:</b> ${ad}</p>
+        <p><b>Soyad:</b> ${soyad}</p>
+        <p><b>Yaş:</b> ${yas}</p>
+        <p><b>Təvəllüd ili:</b> ${il}</p>
+        <p><b>Hobbi:</b> ${hobbi}</p>
+        <p><b>Yaşadığı yer:</b> ${yer}</p>
+    `;
+
+    document.getElementById("netice").innerHTML = netice;
+});
+
+</script>
+
+<a href="sekil.html">
+    <button>USAQLIQ SEKILERIM</button>
+</a>
+<hr>
+<a href="video.html">
+    <button>VIDEO</button>
+</a>
+</body>
+</html>
